@@ -17,12 +17,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author bfw
  */
-public class BuchungenPeripherie extends javax.swing.JFrame {
+public class PeripherieBuchungen extends javax.swing.JFrame {
 
   /**
    * Creates new form BuchungenPeripherie
    */
-  public BuchungenPeripherie() {
+  public PeripherieBuchungen() {
     initComponents();
     Show_Buchungen_In_JTable();
     
@@ -273,20 +273,21 @@ static String printSimpleDateFormat() {
         }
       }
     } catch (ClassNotFoundException ex) {
-      java.util.logging.Logger.getLogger(BuchungenPeripherie.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(PeripherieBuchungen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (InstantiationException ex) {
-      java.util.logging.Logger.getLogger(BuchungenPeripherie.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(PeripherieBuchungen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (IllegalAccessException ex) {
-      java.util.logging.Logger.getLogger(BuchungenPeripherie.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(PeripherieBuchungen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-      java.util.logging.Logger.getLogger(BuchungenPeripherie.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(PeripherieBuchungen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
+    //</editor-fold>
     //</editor-fold>
 
     /* Create and display the form */
     java.awt.EventQueue.invokeLater(new Runnable() {
       public void run() {
-        new BuchungenPeripherie().setVisible(true);
+        new PeripherieBuchungen().setVisible(true);
       }
     });
   }

@@ -238,7 +238,7 @@ public class menue extends javax.swing.JFrame {
   private void button_peripherieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_peripherieActionPerformed
     // TODO add your handling code here:
     this.dispose();
-    BuchungenPeripherie mm = new BuchungenPeripherie();
+    PeripherieBuchungen mm = new PeripherieBuchungen();
 //    mm.show();            
     mm.setVisible(true);    
     

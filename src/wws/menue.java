@@ -101,7 +101,7 @@ public class menue extends javax.swing.JFrame {
             }
         });
 
-        button_peripherie.setText("Buchungen anzeigen");
+        button_peripherie.setText("Peripherie Buchungen anzeigen");
         button_peripherie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_peripherieActionPerformed(evt);
@@ -199,7 +199,7 @@ public class menue extends javax.swing.JFrame {
     private void button_rechnerverwaltungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_rechnerverwaltungActionPerformed
 
         this.dispose();
-        NewJFrame mm = new NewJFrame();
+        RechnerVerwaltung mm = new RechnerVerwaltung();
 //        mm.show();
         mm.setVisible(true);
 
@@ -208,7 +208,7 @@ public class menue extends javax.swing.JFrame {
 
   private void button_perihperieverwaltungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_perihperieverwaltungActionPerformed
                     this.dispose();
-                    Gruppenverwaltung mm = new Gruppenverwaltung();
+                    PeripherieVerwaltung mm = new PeripherieVerwaltung();
 //                    mm.show();
                     mm.setVisible(true);
 // TODO add your handling code here:
@@ -217,7 +217,7 @@ public class menue extends javax.swing.JFrame {
   private void button_rechnerzugangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_rechnerzugangActionPerformed
     // TODO add your handling code here:
         this.dispose();
-        BuchungRechner mm = new BuchungRechner();
+        RechnerZugang mm = new RechnerZugang();
  //       mm.show();
         mm.setVisible(true);
         
@@ -230,7 +230,7 @@ public class menue extends javax.swing.JFrame {
   private void button_peripheriezugangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_peripheriezugangActionPerformed
 
     this.dispose();
-    Bestandsverwaltung mm = new Bestandsverwaltung();
+    PeripherieZugang mm = new PeripherieZugang();
 //    mm.show();
     mm.setVisible(true);    
   }//GEN-LAST:event_button_peripheriezugangActionPerformed

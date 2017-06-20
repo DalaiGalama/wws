@@ -206,7 +206,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="button_peripherie">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Buchungen anzeigen"/>
+        <Property name="text" type="java.lang.String" value="Peripherie Buchungen anzeigen"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_peripherieActionPerformed"/>

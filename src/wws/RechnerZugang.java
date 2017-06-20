@@ -18,7 +18,7 @@ import javax.swing.table.*;
  *
  * @author bfw
  */
-public class BuchungRechner extends javax.swing.JFrame {
+public class RechnerZugang extends javax.swing.JFrame {
 
     /**
      * Creates new form BuchungRechner
@@ -29,7 +29,7 @@ public class BuchungRechner extends javax.swing.JFrame {
 
     
     
-    public BuchungRechner() {
+    public RechnerZugang() {
         initComponents();
         fillComboBoxItems();
         Show_PcBestand_In_JTable();
@@ -557,20 +557,21 @@ public class BuchungRechner extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BuchungRechner.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RechnerZugang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BuchungRechner.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RechnerZugang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BuchungRechner.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RechnerZugang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BuchungRechner.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RechnerZugang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BuchungRechner().setVisible(true);
+                new RechnerZugang().setVisible(true);
             }
         });
     }

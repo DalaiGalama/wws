@@ -11,9 +11,9 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
 
-public class Bestandsverwaltung extends javax.swing.JFrame {
+public class PeripherieZugang extends javax.swing.JFrame {
 
-    public Bestandsverwaltung() {
+    public PeripherieZugang() {
         initComponents();
         Show_Geraete_In_JTable();
     }
@@ -366,20 +366,20 @@ public class Bestandsverwaltung extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RechnerVerwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RechnerVerwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RechnerVerwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RechnerVerwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Bestandsverwaltung().setVisible(true);
+                new PeripherieZugang().setVisible(true);
             }
         });
     }

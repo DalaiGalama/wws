@@ -27,41 +27,41 @@ public class menue extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        menue_rechnerverwaltung = new javax.swing.JButton();
-        menue_etikettendruck = new javax.swing.JButton();
-        menue_geratepruppenverwaltung = new javax.swing.JButton();
+        button_rechnerverwaltung = new javax.swing.JButton();
+        button_rechner = new javax.swing.JButton();
+        button_perihperieverwaltung = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        menue_rechnerverwaltung2 = new javax.swing.JButton();
-        menue_rechnerverwaltung3 = new javax.swing.JButton();
+        button_rechnerzugang = new javax.swing.JButton();
+        button_rechnersuchen = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        menue_etikettendruck1 = new javax.swing.JButton();
-        menue_etikettendruck2 = new javax.swing.JButton();
+        button_peripheriezugang = new javax.swing.JButton();
+        button_peripherie = new javax.swing.JButton();
         BenVer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
-        menue_rechnerverwaltung.setText("Rechner Verwaltung");
-        menue_rechnerverwaltung.addActionListener(new java.awt.event.ActionListener() {
+        button_rechnerverwaltung.setText("Rechner Verwaltung");
+        button_rechnerverwaltung.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menue_rechnerverwaltungActionPerformed(evt);
+                button_rechnerverwaltungActionPerformed(evt);
             }
         });
 
-        menue_etikettendruck.setText("> Buchungen anzeigen <");
-        menue_etikettendruck.addActionListener(new java.awt.event.ActionListener() {
+        button_rechner.setText("> Buchungen anzeigen <");
+        button_rechner.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menue_etikettendruckActionPerformed(evt);
+                button_rechnerActionPerformed(evt);
             }
         });
 
-        menue_geratepruppenverwaltung.setText("Peripheriegruppen verwalten");
-        menue_geratepruppenverwaltung.addActionListener(new java.awt.event.ActionListener() {
+        button_perihperieverwaltung.setText("Peripheriegruppen verwalten");
+        button_perihperieverwaltung.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menue_geratepruppenverwaltungActionPerformed(evt);
+                button_perihperieverwaltungActionPerformed(evt);
             }
         });
 
@@ -74,17 +74,17 @@ public class menue extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel4.setText("mit Barcode");
 
-        menue_rechnerverwaltung2.setText("Rechner Ein/Ausgang");
-        menue_rechnerverwaltung2.addActionListener(new java.awt.event.ActionListener() {
+        button_rechnerzugang.setText("Rechner Ein/Ausgang");
+        button_rechnerzugang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menue_rechnerverwaltung2ActionPerformed(evt);
+                button_rechnerzugangActionPerformed(evt);
             }
         });
 
-        menue_rechnerverwaltung3.setText("> Suchen <");
-        menue_rechnerverwaltung3.addActionListener(new java.awt.event.ActionListener() {
+        button_rechnersuchen.setText("> Suchen <");
+        button_rechnersuchen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menue_rechnerverwaltung3ActionPerformed(evt);
+                button_rechnersuchenActionPerformed(evt);
             }
         });
 
@@ -94,17 +94,17 @@ public class menue extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("(Peripheriegeräte)");
 
-        menue_etikettendruck1.setText("Peripherie - Ein-/Ausgang");
-        menue_etikettendruck1.addActionListener(new java.awt.event.ActionListener() {
+        button_peripheriezugang.setText("Peripherie - Ein-/Ausgang");
+        button_peripheriezugang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menue_etikettendruck1ActionPerformed(evt);
+                button_peripheriezugangActionPerformed(evt);
             }
         });
 
-        menue_etikettendruck2.setText("Buchungen anzeigen");
-        menue_etikettendruck2.addActionListener(new java.awt.event.ActionListener() {
+        button_peripherie.setText("Buchungen anzeigen");
+        button_peripherie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menue_etikettendruck2ActionPerformed(evt);
+                button_peripherieActionPerformed(evt);
             }
         });
 
@@ -137,18 +137,18 @@ public class menue extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(menue_rechnerverwaltung2, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                            .addComponent(menue_rechnerverwaltung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(button_rechnerzugang, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                            .addComponent(button_rechnerverwaltung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(47, 47, 47)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(menue_rechnerverwaltung3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(menue_etikettendruck, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(button_rechnersuchen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(button_rechner, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(96, 96, 96)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(menue_geratepruppenverwaltung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(button_perihperieverwaltung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(menue_etikettendruck1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(menue_etikettendruck2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(button_peripheriezugang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(button_peripherie, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(196, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -165,21 +165,21 @@ public class menue extends javax.swing.JFrame {
                         .addGap(77, 77, 77)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(menue_rechnerverwaltung3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(menue_rechnerverwaltung, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(button_rechnersuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(button_rechnerverwaltung, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(73, 73, 73)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(menue_rechnerverwaltung2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(menue_etikettendruck, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(button_rechnerzugang, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button_rechner, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
-                        .addComponent(menue_etikettendruck1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(button_peripheriezugang, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(menue_geratepruppenverwaltung, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(button_perihperieverwaltung, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(menue_etikettendruck2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(button_peripherie, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(54, 54, 54)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -190,13 +190,13 @@ public class menue extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menue_etikettendruckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menue_etikettendruckActionPerformed
+    private void button_rechnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_rechnerActionPerformed
         // TODO add your handling code here:
 
         
-    }//GEN-LAST:event_menue_etikettendruckActionPerformed
+    }//GEN-LAST:event_button_rechnerActionPerformed
 
-    private void menue_rechnerverwaltungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menue_rechnerverwaltungActionPerformed
+    private void button_rechnerverwaltungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_rechnerverwaltungActionPerformed
 
         this.dispose();
         NewJFrame mm = new NewJFrame();
@@ -204,45 +204,45 @@ public class menue extends javax.swing.JFrame {
         mm.setVisible(true);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_menue_rechnerverwaltungActionPerformed
+    }//GEN-LAST:event_button_rechnerverwaltungActionPerformed
 
-  private void menue_geratepruppenverwaltungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menue_geratepruppenverwaltungActionPerformed
+  private void button_perihperieverwaltungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_perihperieverwaltungActionPerformed
                     this.dispose();
                     Gruppenverwaltung mm = new Gruppenverwaltung();
 //                    mm.show();
                     mm.setVisible(true);
 // TODO add your handling code here:
-  }//GEN-LAST:event_menue_geratepruppenverwaltungActionPerformed
+  }//GEN-LAST:event_button_perihperieverwaltungActionPerformed
 
-  private void menue_rechnerverwaltung2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menue_rechnerverwaltung2ActionPerformed
+  private void button_rechnerzugangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_rechnerzugangActionPerformed
     // TODO add your handling code here:
         this.dispose();
         BuchungRechner mm = new BuchungRechner();
  //       mm.show();
         mm.setVisible(true);
         
-  }//GEN-LAST:event_menue_rechnerverwaltung2ActionPerformed
+  }//GEN-LAST:event_button_rechnerzugangActionPerformed
 
-  private void menue_rechnerverwaltung3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menue_rechnerverwaltung3ActionPerformed
+  private void button_rechnersuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_rechnersuchenActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_menue_rechnerverwaltung3ActionPerformed
+  }//GEN-LAST:event_button_rechnersuchenActionPerformed
 
-  private void menue_etikettendruck1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menue_etikettendruck1ActionPerformed
+  private void button_peripheriezugangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_peripheriezugangActionPerformed
 
     this.dispose();
     Bestandsverwaltung mm = new Bestandsverwaltung();
 //    mm.show();
     mm.setVisible(true);    
-  }//GEN-LAST:event_menue_etikettendruck1ActionPerformed
+  }//GEN-LAST:event_button_peripheriezugangActionPerformed
 
-  private void menue_etikettendruck2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menue_etikettendruck2ActionPerformed
+  private void button_peripherieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_peripherieActionPerformed
     // TODO add your handling code here:
     this.dispose();
     BuchungenPeripherie mm = new BuchungenPeripherie();
 //    mm.show();            
     mm.setVisible(true);    
     
-  }//GEN-LAST:event_menue_etikettendruck2ActionPerformed
+  }//GEN-LAST:event_button_peripherieActionPerformed
 
     private void BenVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BenVerActionPerformed
         // TODO add your handling code here:
@@ -288,17 +288,17 @@ public class menue extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BenVer;
+    private javax.swing.JButton button_perihperieverwaltung;
+    private javax.swing.JButton button_peripherie;
+    private javax.swing.JButton button_peripheriezugang;
+    private javax.swing.JButton button_rechner;
+    private javax.swing.JButton button_rechnersuchen;
+    private javax.swing.JButton button_rechnerverwaltung;
+    private javax.swing.JButton button_rechnerzugang;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JButton menue_etikettendruck;
-    private javax.swing.JButton menue_etikettendruck1;
-    private javax.swing.JButton menue_etikettendruck2;
-    private javax.swing.JButton menue_geratepruppenverwaltung;
-    private javax.swing.JButton menue_rechnerverwaltung;
-    private javax.swing.JButton menue_rechnerverwaltung2;
-    private javax.swing.JButton menue_rechnerverwaltung3;
     // End of variables declaration//GEN-END:variables
 }

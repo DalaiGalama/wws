@@ -48,20 +48,20 @@
                   <Component id="jLabel1" min="-2" pref="218" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="menue_rechnerverwaltung2" pref="181" max="32767" attributes="0"/>
-                          <Component id="menue_rechnerverwaltung" max="32767" attributes="0"/>
+                          <Component id="button_rechnerzugang" pref="181" max="32767" attributes="0"/>
+                          <Component id="button_rechnerverwaltung" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="menue_rechnerverwaltung3" max="32767" attributes="0"/>
-                          <Component id="menue_etikettendruck" min="-2" pref="181" max="-2" attributes="0"/>
+                          <Component id="button_rechnersuchen" max="32767" attributes="0"/>
+                          <Component id="button_rechner" min="-2" pref="181" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="menue_geratepruppenverwaltung" max="32767" attributes="0"/>
+                          <Component id="button_perihperieverwaltung" max="32767" attributes="0"/>
                           <Component id="jLabel3" max="32767" attributes="0"/>
-                          <Component id="menue_etikettendruck1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="menue_etikettendruck2" min="-2" pref="248" max="-2" attributes="0"/>
+                          <Component id="button_peripheriezugang" alignment="0" max="32767" attributes="0"/>
+                          <Component id="button_peripherie" min="-2" pref="248" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -84,14 +84,14 @@
                       <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="menue_rechnerverwaltung3" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="menue_rechnerverwaltung" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="button_rechnersuchen" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="button_rechnerverwaltung" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="menue_rechnerverwaltung2" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                                  <Component id="menue_etikettendruck" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="button_rechnerzugang" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                                  <Component id="button_rechner" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -99,11 +99,11 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel6" min="-2" pref="29" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                      <Component id="menue_etikettendruck1" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="button_peripheriezugang" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="menue_geratepruppenverwaltung" min="-2" pref="53" max="-2" attributes="0"/>
+                      <Component id="button_perihperieverwaltung" min="-2" pref="53" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="menue_etikettendruck2" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="button_peripherie" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
@@ -116,28 +116,28 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="menue_rechnerverwaltung">
+    <Component class="javax.swing.JButton" name="button_rechnerverwaltung">
       <Properties>
         <Property name="text" type="java.lang.String" value="Rechner Verwaltung"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menue_rechnerverwaltungActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_rechnerverwaltungActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="menue_etikettendruck">
+    <Component class="javax.swing.JButton" name="button_rechner">
       <Properties>
         <Property name="text" type="java.lang.String" value="&gt; Buchungen anzeigen &lt;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menue_etikettendruckActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_rechnerActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="menue_geratepruppenverwaltung">
+    <Component class="javax.swing.JButton" name="button_perihperieverwaltung">
       <Properties>
         <Property name="text" type="java.lang.String" value="Peripheriegruppen verwalten"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menue_geratepruppenverwaltungActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_perihperieverwaltungActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -164,20 +164,20 @@
         <Property name="text" type="java.lang.String" value="mit Barcode"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="menue_rechnerverwaltung2">
+    <Component class="javax.swing.JButton" name="button_rechnerzugang">
       <Properties>
         <Property name="text" type="java.lang.String" value="Rechner Ein/Ausgang"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menue_rechnerverwaltung2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_rechnerzugangActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="menue_rechnerverwaltung3">
+    <Component class="javax.swing.JButton" name="button_rechnersuchen">
       <Properties>
         <Property name="text" type="java.lang.String" value="&gt; Suchen &lt;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menue_rechnerverwaltung3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_rechnersuchenActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
@@ -196,20 +196,20 @@
         <Property name="text" type="java.lang.String" value="(Peripherieger&#xe4;te)"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="menue_etikettendruck1">
+    <Component class="javax.swing.JButton" name="button_peripheriezugang">
       <Properties>
         <Property name="text" type="java.lang.String" value="Peripherie - Ein-/Ausgang"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menue_etikettendruck1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_peripheriezugangActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="menue_etikettendruck2">
+    <Component class="javax.swing.JButton" name="button_peripherie">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buchungen anzeigen"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menue_etikettendruck2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_peripherieActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BenVer">

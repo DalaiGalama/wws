@@ -6,6 +6,7 @@
 package wws;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  *
@@ -21,6 +22,22 @@ public class DruckScanTest extends javax.swing.JFrame {
 //        scanLesen();
     }
 
+    private void scanVersuch1 (){
+
+        Scanner scanner = new Scanner(System.in);
+        boolean ok = true;
+
+
+        while (ok){
+            String s = scanner.next();
+            if(s.equals("q")) break;
+            System.out.println(s);
+        }
+        System.out.println("Bye...");
+        scanner.close();
+    }
+
+            
     
     private static void scanLesen () {
         
@@ -46,6 +63,7 @@ public class DruckScanTest extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jButtonDruck = new javax.swing.JButton();
         jTextEingabe = new javax.swing.JTextField();
+        jButtonScan = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -58,6 +76,13 @@ public class DruckScanTest extends javax.swing.JFrame {
             }
         });
 
+        jButtonScan.setText("scannen");
+        jButtonScan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonScanActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -67,13 +92,17 @@ public class DruckScanTest extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButtonDruck, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextEingabe, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addComponent(jButtonScan)
+                .addGap(64, 64, 64))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addComponent(jButtonDruck)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonDruck)
+                    .addComponent(jButtonScan))
                 .addGap(44, 44, 44)
                 .addComponent(jTextEingabe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(163, Short.MAX_VALUE))
@@ -87,6 +116,11 @@ public class DruckScanTest extends javax.swing.JFrame {
             
                 drucken.druckStart(jTextEingabe.getText());
     }//GEN-LAST:event_jButtonDruckActionPerformed
+
+    private void jButtonScanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonScanActionPerformed
+        // TODO add your handling code here:
+        scanVersuch1 ();
+    }//GEN-LAST:event_jButtonScanActionPerformed
 
    
     /**
@@ -123,6 +157,7 @@ public class DruckScanTest extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDruck;
+    private javax.swing.JButton jButtonScan;
     private javax.swing.JTextField jTextEingabe;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables

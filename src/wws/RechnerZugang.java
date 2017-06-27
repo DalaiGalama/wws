@@ -33,6 +33,7 @@ public class RechnerZugang extends javax.swing.JFrame {
         initComponents();
         fillComboBoxItems();
         Show_PcBestand_In_JTable();
+        jScanEingabe.requestFocusInWindow();
     }
 
     
@@ -219,6 +220,7 @@ public class RechnerZugang extends javax.swing.JFrame {
         jButtonEinlagern = new javax.swing.JButton();
         jButtonAuslagern = new javax.swing.JButton();
         jButtonNochmal = new javax.swing.JButton();
+        jButtonScannen = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -252,7 +254,6 @@ public class RechnerZugang extends javax.swing.JFrame {
                 "WWS Nr", "PC ID", "im Lager"
             }
         ));
-        jTable_PCBestand.setColumnSelectionAllowed(true);
         jTable_PCBestand.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable_PCBestandMouseClicked(evt);
@@ -293,6 +294,13 @@ public class RechnerZugang extends javax.swing.JFrame {
             }
         });
 
+        jButtonScannen.setText("scannen");
+        jButtonScannen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonScannenActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -304,13 +312,8 @@ public class RechnerZugang extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(menueaufruf)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButtonDelete)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGap(185, 185, 185)
-                                .addComponent(jButtonAuslagern))
-                            .addComponent(jButtonNochmal)))
+                                .addComponent(jButtonAuslagern))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -324,13 +327,24 @@ public class RechnerZugang extends javax.swing.JFrame {
                                 .addComponent(DruckenButton)
                                 .addGap(157, 157, 157))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
+                        .addGap(25, 25, 25)
+                        .addComponent(jButtonScannen)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonEinlagern, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonNochmal)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonDelete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(159, 159, 159))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -344,12 +358,13 @@ public class RechnerZugang extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addGap(33, 33, 33)
                         .addComponent(DruckenButton)
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonDelete)
-                            .addComponent(jTextField_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(139, 139, 139)
+                                .addComponent(jButtonScannen)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonEinlagern)
@@ -358,9 +373,12 @@ public class RechnerZugang extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(1, 1, 1)
-                .addComponent(jButtonNochmal)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonDelete)
+                    .addComponent(jButtonNochmal))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(menueaufruf)
                 .addGap(56, 56, 56))
         );
@@ -428,7 +446,7 @@ public class RechnerZugang extends javax.swing.JFrame {
 
     private void jButtonEinlagernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEinlagernActionPerformed
         // TODO add your handling code here:
-        
+   
         String s = jScanEingabe.getText();
         String[]ss = s.split("\\s");
         for (int i=0;i<ss.length;i++) {
@@ -473,6 +491,10 @@ public class RechnerZugang extends javax.swing.JFrame {
 
     private void jTable_PCBestandMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_PCBestandMouseClicked
         // TODO add your handling code here:        
+        int i = jTable_PCBestand.getSelectedRow();
+        TableModel model  = jTable_PCBestand.getModel();
+        jTextField_Delete.setText(model.getValueAt(i,0).toString());
+        
     }//GEN-LAST:event_jTable_PCBestandMouseClicked
 
     private void jButtonNochmalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNochmalActionPerformed
@@ -499,6 +521,11 @@ public class RechnerZugang extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_jButtonNochmalActionPerformed
+
+    private void jButtonScannenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonScannenActionPerformed
+        // TODO add your handling code here:
+        jScanEingabe.requestFocusInWindow();
+    }//GEN-LAST:event_jButtonScannenActionPerformed
 
 
     private String machLabel (int pcnr, int pctyp) {
@@ -584,6 +611,7 @@ public class RechnerZugang extends javax.swing.JFrame {
     private javax.swing.JButton jButtonDelete;
     private javax.swing.JButton jButtonEinlagern;
     private javax.swing.JButton jButtonNochmal;
+    private javax.swing.JButton jButtonScannen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextArea jScanEingabe;
     private javax.swing.JScrollPane jScrollPane1;

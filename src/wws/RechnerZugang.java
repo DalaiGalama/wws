@@ -17,14 +17,14 @@ import javax.swing.table.*;
 /**
  *
  * @author bfw
+ * 
+ * 
  */
 public class RechnerZugang extends javax.swing.JFrame {
 
-    /**
-     * Creates new form BuchungRechner
-     */
-    
 
+    
+    //array mit den PCKlassenIDs
     private static ArrayList<Integer> PCKlassenIDsListe = new ArrayList<>();
 
     
@@ -37,10 +37,9 @@ public class RechnerZugang extends javax.swing.JFrame {
     }
 
     
-
-    
+/* Holt die höchste, also aktuelle WWS_Nr
+  */  
     private int getMaxWWSNr() {
-
         
         Connection connection = DBConnection.getConnection2();        
         String query = "SELECT MAX(WWS_Nr) FROM PC_Bestand ";
@@ -66,6 +65,10 @@ public class RechnerZugang extends javax.swing.JFrame {
     }
    
     
+    /*
+   Holt alle Einträge aus der Tabelle PCKlasse und schreibt sie in
+    eine ArrayList mit entpsrechenden Objekten
+    */
     private ArrayList<ObjPcklasse> getPcList()
     {
         ArrayList<ObjPcklasse> pcList = new ArrayList<>();
@@ -95,6 +98,11 @@ public class RechnerZugang extends javax.swing.JFrame {
         return pcList;
     }  
     
+    /*
+    Holt alle Einträge aus PC_Bestand (zusammen mit PCKLasse IDs)
+    und schreibt sie in eine ArrayList mit entsprechenden Objekten
+    */
+    
     private ArrayList<ObjPcbestand> getPCBestand () {
 
         ArrayList<ObjPcbestand> BestandList = new ArrayList<>();
@@ -109,7 +117,6 @@ public class RechnerZugang extends javax.swing.JFrame {
         try
         {
             st = connection.createStatement();
-            //rs = st.executeQuery(query);
             rs = st.executeQuery(query);
             ObjPcbestand PCBestand;
             
@@ -126,7 +133,10 @@ public class RechnerZugang extends javax.swing.JFrame {
         
     }
             
-            
+/*
+    Führt den SQL Befehl 'query' aus und schreibt dazu 
+    optional eine  Message 
+    */            
 
     private boolean executeSQLQuery(String query, String message)
     {
@@ -136,12 +146,7 @@ public class RechnerZugang extends javax.swing.JFrame {
         {
             st = conn.createStatement();
             if((st.executeUpdate(query)) == 1)
-            {
-                 
-//                DefaultTableModel model = (DefaultTableModel)jTable_PCBestand.getModel();
-//                model.setRowCount(0);
-                Show_PcBestand_In_JTable();
-                
+            {                
 //                JOptionPane.showMessageDialog(null, "Data "+message+" Succefully");
                 return true;
             } else{
@@ -158,6 +163,10 @@ public class RechnerZugang extends javax.swing.JFrame {
 
 
     
+/*
+  Füllt die DropDown Box mit den PC Klassen aus   
+    */    
+        
     private void fillComboBoxItems() {
         
         ArrayList<ObjPcklasse> pcListe = getPcList();
@@ -167,14 +176,15 @@ public class RechnerZugang extends javax.swing.JFrame {
 //        System.out.println(anzahl);
         for (int i = 0; i < anzahl; i++) {
             itemListe[i] = pcListe.get(i).getHersteller() + pcListe.get(i).getModell();
-            PCKlassenIDsListe.add(pcListe.get(i).getID());
-           
-                   
+            PCKlassenIDsListe.add(pcListe.get(i).getID());                              
         }        
         PCKlappliste.setModel(new javax.swing.DefaultComboBoxModel<>(itemListe));
     }
     
-    
+/*
+    Füllt die Tabelle mit den PC Bestand Daten aus
+    Wird nach jeder Änderung in der Datenbank aufgerufen
+    */
     private void Show_PcBestand_In_JTable()
     {
         ArrayList<ObjPcbestand> BestandList = getPCBestand();
@@ -192,7 +202,48 @@ public class RechnerZugang extends javax.swing.JFrame {
         }
     }    
     
+  /*
+    Macht den Labelcode, so z.B. aus den Integer 23 und 5 den String 000023005
+    */  
     
+    private String machLabel (int pcnr, int pctyp) {
+        
+        String LabelNr;
+        String LabelPc;
+        if (pcnr < 10) {
+            LabelNr = "00000"+pcnr;
+        } else if (pcnr <100) {
+            LabelNr = "0000"+pcnr;
+        } else if (pcnr<1000) {
+            LabelNr = "000"+pcnr;
+        } else if (pcnr<10000) {
+            LabelNr = "00"+pcnr;
+        } else if (pcnr<100000) {
+            LabelNr = "0"+pcnr;
+        } else {
+            LabelNr = String.valueOf(pcnr);
+        }
+        
+        if (pctyp<10) {
+            LabelPc = "00"+pctyp;
+        } else if (pctyp<100) {
+            LabelPc = "0"+pctyp;
+        } else {
+            LabelPc = String.valueOf(pctyp);
+        }
+
+        String Label = LabelNr + LabelPc;
+        return Label;
+    }
+
+        static String printSimpleDateFormat() { 
+        SimpleDateFormat formatter = new SimpleDateFormat( 
+                "yyyy-MM-dd"); 
+        Date currentTime = new Date();
+        return formatter.format(currentTime);
+    //    System.out.println(formatter.format(currentTime));        // 2012.04.14 - 21:34:07  
+    } 
+        
     
    
 
@@ -388,6 +439,9 @@ public class RechnerZugang extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
+// JAVA ACTION EVENTS (Button gedrückt etc.)   
+    
     private void menueaufrufActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menueaufrufActionPerformed
 // TODO add your handling code here:
         this.dispose();
@@ -397,6 +451,10 @@ public class RechnerZugang extends javax.swing.JFrame {
 
     }//GEN-LAST:event_menueaufrufActionPerformed
 
+    /*
+    Button Drucken: Legt neue Einträge in der Datenbank an und druckt entsprechende Labels
+    */
+    
     private void DruckenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DruckenButtonActionPerformed
  
         int cbm = PCKlappliste.getSelectedIndex();
@@ -407,17 +465,21 @@ public class RechnerZugang extends javax.swing.JFrame {
         //  java.lang.NumberFormatException abfangen bei falscher Eingabe!!
         int ZahlderLabel = Integer.parseInt(EingabeAnzahl.getText());
 
+
         String EinzelQuery = " INSERT INTO PC_Bestand (PCKlassenID,Datum_Ein,BenutzerID) VALUES (" 
                 + PCKlassenIDsListe.get(cbm) + ",'" 
                 + printSimpleDateFormat() + "',"
                 + DBConnection.getnUserId() + ");";
         boolean ok;
         String Label;
-//System.out.println(EinzelQuery);
-        
+
+
+        Show_PcBestand_In_JTable();
+                
         for (int i = 0; i < ZahlderLabel; i++) {
 
             ok = executeSQLQuery(EinzelQuery, "Inserted");       
+
             if (ok) {
                 int j = getMaxWWSNr();
                 if (j>0) {
@@ -431,6 +493,8 @@ public class RechnerZugang extends javax.swing.JFrame {
         }
 
 
+
+                
     }//GEN-LAST:event_DruckenButtonActionPerformed
 
     private void EingabeAnzahlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EingabeAnzahlActionPerformed
@@ -438,12 +502,16 @@ public class RechnerZugang extends javax.swing.JFrame {
         System.out.println("oops");
     }//GEN-LAST:event_EingabeAnzahlActionPerformed
 
+    
+ //Löscht Einträge aus PC Bestand   
     private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
 
         String query = "DELETE FROM PC_Bestand WHERE WWS_Nr = "+jTextField_Delete.getText();
-        executeSQLQuery(query, "Deleted");        
+        boolean ok = executeSQLQuery(query, "Deleted");        
+        if (ok) Show_PcBestand_In_JTable();
     }//GEN-LAST:event_jButtonDeleteActionPerformed
 
+    //PC Einlagern, wird in der Datenbank auf true gesetzt
     private void jButtonEinlagernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEinlagernActionPerformed
         // TODO add your handling code here:
    
@@ -459,13 +527,15 @@ public class RechnerZugang extends javax.swing.JFrame {
                 
                 System.out.println(z1 + " und "+z2); 
                 String query = "UPDATE PC_Bestand SET Aktuell_im_Lager = true WHERE WWS_Nr = "+z2+" and PCKlassenID = "+z1;
-                executeSQLQuery(query,"Updated");                
+                boolean ok = executeSQLQuery(query,"Updated"); 
+                if (ok) Show_PcBestand_In_JTable();
             } catch (StringIndexOutOfBoundsException|NumberFormatException ex) {
                 System.out.println(ex.getMessage());
             }        
         }
     }//GEN-LAST:event_jButtonEinlagernActionPerformed
 
+    // PC auslagern, wird in der DB auf false gesetzt
     private void jButtonAuslagernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAuslagernActionPerformed
         // TODO add your handling code here:
         String s = jScanEingabe.getText();
@@ -480,7 +550,8 @@ public class RechnerZugang extends javax.swing.JFrame {
                 
                 System.out.println(z1 + " und "+z2); 
                 String query = "UPDATE PC_Bestand SET Aktuell_im_Lager = false WHERE WWS_Nr = "+z2+" and PCKlassenID = "+z1;
-                executeSQLQuery(query,"Updated");                
+                boolean ok = executeSQLQuery(query,"Updated");      
+                if (ok) Show_PcBestand_In_JTable();
             } catch (StringIndexOutOfBoundsException|NumberFormatException ex) {
                 System.out.println(ex.getMessage());
             }
@@ -489,6 +560,7 @@ public class RechnerZugang extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonAuslagernActionPerformed
 
+    //zeigt die Nr eines zu Löschenden PCs ins Textfeld 
     private void jTable_PCBestandMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_PCBestandMouseClicked
         // TODO add your handling code here:        
         int i = jTable_PCBestand.getSelectedRow();
@@ -497,6 +569,7 @@ public class RechnerZugang extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jTable_PCBestandMouseClicked
 
+    // Druckt den Barcode eines PCs nochmal aus
     private void jButtonNochmalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNochmalActionPerformed
         // TODO add your handling code here:
        
@@ -522,50 +595,14 @@ public class RechnerZugang extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonNochmalActionPerformed
 
+    //Fokusiert das Eingabefenster
     private void jButtonScannenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonScannenActionPerformed
         // TODO add your handling code here:
         jScanEingabe.requestFocusInWindow();
     }//GEN-LAST:event_jButtonScannenActionPerformed
 
 
-    private String machLabel (int pcnr, int pctyp) {
-        
-        String LabelNr;
-        String LabelPc;
-        if (pcnr < 10) {
-            LabelNr = "00000"+pcnr;
-        } else if (pcnr <100) {
-            LabelNr = "0000"+pcnr;
-        } else if (pcnr<1000) {
-            LabelNr = "000"+pcnr;
-        } else if (pcnr<10000) {
-            LabelNr = "00"+pcnr;
-        } else if (pcnr<100000) {
-            LabelNr = "0"+pcnr;
-        } else {
-            LabelNr = String.valueOf(pcnr);
-        }
-        
-        if (pctyp<10) {
-            LabelPc = "00"+pctyp;
-        } else if (pctyp<100) {
-            LabelPc = "0"+pctyp;
-        } else {
-            LabelPc = String.valueOf(pctyp);
-        }
 
-        String Label = LabelNr + LabelPc;
-        return Label;
-    }
-
-        static String printSimpleDateFormat() { 
-        SimpleDateFormat formatter = new SimpleDateFormat( 
-                "yyyy-MM-dd"); 
-        Date currentTime = new Date();
-        return formatter.format(currentTime);
-    //    System.out.println(formatter.format(currentTime));        // 2012.04.14 - 21:34:07  
-    } 
-    
     
     /**
      * @param args the command line arguments

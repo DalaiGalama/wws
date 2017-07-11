@@ -170,7 +170,7 @@
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="DB Verbindungen"/>
+        <Property name="text" type="java.lang.String" value="DB Verbindungen Hallo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonDBLoeschen">

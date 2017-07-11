@@ -117,7 +117,7 @@ public class BenutzerVerbindungen extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        jLabel1.setText("DB Verbindungen");
+        jLabel1.setText("DB Verbindungen Hallo");
 
         jButtonDBLoeschen.setText("Löschen");
         jButtonDBLoeschen.addActionListener(new java.awt.event.ActionListener() {
